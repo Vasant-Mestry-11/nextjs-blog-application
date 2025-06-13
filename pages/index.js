@@ -1,9 +1,10 @@
+import Hero from "@/components/homepage/hero"
 
-const HomePage = () => {
-
+export default function Homepage() {
+  return <div>
+    <Hero />
+  </div>
 }
-
-export default HomePage
 
 // 1. Hero section => Present yourself
 // 2. Featured posts

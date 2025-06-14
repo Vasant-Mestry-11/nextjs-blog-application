@@ -1,9 +1,44 @@
-import Hero from "@/components/homepage/hero"
+import FeaturedPosts from "@/components/homepage/featured-posts";
+import Hero from "@/components/homepage/hero";
 
 export default function Homepage() {
-  return <div>
-    <Hero />
-  </div>
+  const DUMMY_POSTS = [
+    {
+      title: "Getting started with nextjs",
+      slug: "getting-started-with-nextjs",
+      image: "getting-started-with-nextjs.png",
+      date: "2022-02-10",
+      excerpt: "Nextjs is react framwork",
+    },
+    {
+      title: "Getting started with nextjs",
+      slug: "getting-started-with-nextjs2",
+      image: "getting-started-with-nextjs.png",
+      date: "2022-02-10",
+      excerpt: "Nextjs is react framwork",
+    },
+    {
+      title: "Getting started with nextjs",
+      slug: "getting-started-with-nextjs3",
+      image: "getting-started-with-nextjs.png",
+      date: "2022-02-10",
+      excerpt: "Nextjs is react framwork",
+    },
+    {
+      title: "Getting started with nextjs",
+      slug: "getting-started-with-nextjs4",
+      image: "getting-started-with-nextjs.png",
+      date: "2022-02-10",
+      excerpt: "Nextjs is react framwork",
+    },
+  ];
+
+  return (
+    <div>
+      <Hero />
+      <FeaturedPosts posts={DUMMY_POSTS} />
+    </div>
+  );
 }
 
 // 1. Hero section => Present yourself

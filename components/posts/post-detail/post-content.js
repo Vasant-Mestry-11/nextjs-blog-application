@@ -1,5 +1,7 @@
 import PostHeader from "./post-header";
+
 import classes from './post-content.module.css'
+import Markdown from "react-markdown";
 
 const DUMMY_ARTICLE = {
   title: "Getting started with nextjs",
@@ -14,6 +16,8 @@ export default function PostContent() {
   const imagePath = `/images/posts/${slug}/${image}`
   return <article className={classes.content}>
     <PostHeader title={title} image={imagePath} />
-    {content}
+    <Markdown>
+      {content}
+    </Markdown>
   </article>
 }

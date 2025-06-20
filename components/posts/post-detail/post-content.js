@@ -1,5 +1,6 @@
 import PostHeader from "./post-header";
-
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark, } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import classes from "./post-content.module.css";
 import Markdown from "react-markdown";
 import Image from "next/image";
@@ -39,6 +40,11 @@ export default function PostContent({ post }) {
 
       return <p>{paragraph.children}</p>
     },
+
+    code(code) {
+      const language = code.className.split('-')[1];
+      return <SyntaxHighlighter style={atomDark} language={language}>{code.children}</SyntaxHighlighter>
+    }
   };
   const imagePath = `/images/posts/${slug}/${image}`;
   return (

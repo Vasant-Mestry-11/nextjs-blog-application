@@ -1,8 +1,14 @@
 import PostContent from "@/components/posts/post-detail/post-content"
 import { getPostsData, getPostsFiles } from "@/lib/post-utils";
+import Head from "next/head";
 
 const SinglePostPage = ({ post }) => {
-  return <PostContent post={post} />
+  return <>
+    <Head>
+      <title>{post.title}</title>
+      <meta name="description" content={post.excerpt} />
+    </Head>
+    <PostContent post={post} /></>
 }
 
 export default SinglePostPage

@@ -52,7 +52,7 @@ function ContactForm() {
     try {
       await sendContactData({ email, name, message })
       setRequestStatus('success')
-
+      setFormData({ email: '', message: '', name: '' })
     } catch (error) {
       setRequestStatus('error')
     }
